@@ -13,7 +13,13 @@ const images = [
   },
 ];
 
+const items = [];
 
+for (let image of images) {
+  items.push(`<li><img src="${image.url}" alt="${image.alt}"></li>`);
+};
+  
+  document.querySelector('ul').insertAdjacentHTML('beforeEnd',  [...items].join(''));
+    
+  // не надо искать по квериселекетору и добавлять в дом на каждую итерацию цикла, в цикле собираем строки, после цикла ищем елемент и один раз добавляем.
 
-for (let image of images)
-    document.querySelector('ul').insertAdjacentHTML('beforeEnd', `<li><img src="${image.url}" alt="${image.alt}"></li>`);
